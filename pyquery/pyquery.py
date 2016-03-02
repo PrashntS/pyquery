@@ -108,7 +108,11 @@ class NoDefault(object):
         return '<NoDefault>'
 
 no_default = NoDefault()
-del NoDefault
+
+# - fix added to make PyQuery objects pickle-able.
+# - Pickle module requires the attribute NoDefault to be accessible
+# - Prashant Sinha <prashant@ducic.ac.in> 03/03/2016
+# del NoDefault
 
 
 class FlexibleElement(object):
